@@ -3,6 +3,8 @@ import express from "express";
 import Messages from "./dbMessages.js";
 import mongoose from "mongoose";
 import cors from "cors";
+import dotenv from "dotenv";
+dotenv.config()
 
 //app config
 const app = express();
@@ -14,7 +16,7 @@ app.use(cors());
 
 //DB config
 const connection_url =
-  "mongodb+srv://admin:rlqzqh4imB9d8lDZ@cluster0.1xl8b.mongodb.net/whatsAppDB?retryWrites=true&w=majority";
+  `mongodb+srv://${process.env.USER_NAME}:${process.env.PASSWORD}@cluster0.1xl8b.mongodb.net/${process.env.DB_NAME}?retryWrites=true&w=majority`;
 
 mongoose
   .connect(connection_url, {
