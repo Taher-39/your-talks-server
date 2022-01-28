@@ -15,12 +15,11 @@ const port = process.env.PORT || 5000;
 app.use(express.json());
 app.use(cors());
 
-
 //for realtime update
 const pusher = new Pusher({
-  appId: `${process.env.aptId}`,
-  key: `${process.env.KEY}`,
-  secret: `${process.env.secret}`,
+  appId: "1339305",
+  key: "2d30b17e88412c3af032",
+  secret: "6b32c6cef4ff0be2ed36",
   cluster: "ap2",
   useTLS: true,
 });
@@ -48,7 +47,6 @@ db.once("open", () => {
     }
   });
 });
-
 
 //DB config
 const connection_url = `mongodb+srv://${process.env.USER_NAME}:${process.env.PASSWORD}@cluster0.1xl8b.mongodb.net/${process.env.DB_NAME}?retryWrites=true&w=majority`;
@@ -94,4 +92,3 @@ app.get("/messages/sync", (req, res) => {
 
 //listen
 app.listen(port, () => console.log(`Listening on localhost:${port}`));
-
