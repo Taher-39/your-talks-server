@@ -7,4 +7,4 @@ const yourTalksSchema = mongoose.Schema({
   received: Boolean,
 });
 
-export default mongoose.model("messageConnect", yourTalksSchema);
+export default mongoose.model("massages", yourTalksSchema);
